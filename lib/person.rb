@@ -2,8 +2,9 @@
 require 'pry'
 
 class Person
-  attr_reader :name, :happiness
-  attr_accessor :hygiene, :bank_account
+  attr_reader :name, :happiness, :hygiene
+  attr_accessor :bank_account
+
 
 
 
@@ -33,13 +34,16 @@ class Person
   end
 end
 
-
-    if @happiness = 0
-      false
+  def hygiene=(num)
+    if num > 10
+      @hygiene = 10
+    elsif num < 0
+      @hygiene = 0
     else
-      true
+      @hygiene = num
     end
   end
+
 
     # def happy_level
     #   if @happiness >= 10
@@ -75,30 +79,30 @@ end
   end
 
   def take_bath
-    @hygiene += 4
+    self.hygiene += 4  #calling hygiene method on the class itself
       "♪ Rub-a-dub just relaxing in the tub ♫"
-      # if ---
     end
 
-  def work_out #self.happiness same as @happiness
-    @happiness += 2
-      @hygiene -= 3
-        "♪ another one bites the dust ♫"
+  def work_out
+    self.happiness += 2
+    self.hygiene -= 3
+      "♪ another one bites the dust ♫"
   end
 
   def call_friend(friend)
-    self.happiness = (happiness += 3)
-      friend.happiness = (happiness += 3)
-         "Hi Felix! It's Stella. How are you?"
+    self.happiness += 3
+    friend.happiness += 3
+       "Hi #{friend.name}! It's #{self.name}. How are you?"
   end
 
   def start_conversation(friend, topic)
-    if topic == politics
-      self.happiness && friend.happiness = (happiness -= 1)
+    if topic == "politics"
+      self.happiness  -= 2
+      friend.happiness -= 2
         "blah blah partisan blah lobbyist"
-      elsif
-        topic == weather
-          self.happiness && friend.happiness = (happiness += 1)
+      elsif topic == "weather"
+          self.happiness += 1
+          friend.happiness += 1
           "blah blah sun blah rain"
         else
           "blah blah blah blah blah"
