@@ -1,11 +1,8 @@
-<<<<<<< HEAD
-
 require 'pry'
 
 class Person
   attr_reader :name, :happiness, :hygiene
   attr_accessor :bank_account
-
 
 
 
@@ -42,58 +39,8 @@ end
       @hygiene = 0
     else
       @hygiene = num
-=======
-require 'pry'
-
-class Person
-  attr_reader :name,:happiness
-  attr_accessor :bank_account,:hygiene
-
-  def initialize(name) #bc we're changing name, we're taking name arg.
-    @name = name
-    @bank_account = 25
-    @happiness = 8
-    @hygiene = 8
-
-  end
-
-  # def happiness
-  #   @happiness
-  # end
-
-  def happiness=(happiness)
-
-    if happiness <0
-      @happiness = 0
-    elsif happiness >10
-      @happiness = 10
-    else
-      @happiness = happiness
     end
   end
-
-  def hygiene=(hygiene)
-    if hygiene <0
-      @hygiene = 0
-    elsif hygiene >10
-      @hygiene = 10
-    else
-      @hygiene = hygiene
->>>>>>> 2486e87ef5207334664ab6b3cfe6d036f65913b6
-    end
-  end
-
-
-<<<<<<< HEAD
-    # def happy_level
-    #   if @happiness >= 10
-    #     @happiness = 10
-    #   elsif @happiness <= 0
-    #     @happiness = 0
-    #   else
-    #
-    #   end
-    # end
 
 
 
